@@ -1,3 +1,16 @@
+local GrowAGarden_PlaceID = 126884695634066
+if game.PlaceId ~= GrowAGarden_PlaceID then
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "PYROVEX HUB", Text = "Exclusive to Grow a Garden!", Duration = 5
+    })
+    return
+end
+
+-- Cleanup
+if _G.TLoop then _G.TLoop = false end
+local CoreGui = game:GetService("CoreGui")
+if CoreGui:FindFirstChild("PyroVexHub") then CoreGui.PyroVexHub:Destroy() end
+if CoreGui:FindFirstChild("PyrovexKeyUI") then CoreGui.PyrovexKeyUI:Destroy() end
 
 local Players=game:GetService("Players")
 local UIS=game:GetService("UserInputService")
